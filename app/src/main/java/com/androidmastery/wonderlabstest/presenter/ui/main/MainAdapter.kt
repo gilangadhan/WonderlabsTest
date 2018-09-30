@@ -15,7 +15,7 @@ import com.androidmastery.wonderlabstest.model.DateResponse
 
 class MainAdapter(private val dates: List<DateResponse>) : RecyclerView.Adapter<MainViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
-        return MainViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_date, parent, false))
+        return MainViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_date, parent, false))
     }
 
     override fun getItemCount(): Int = dates.size

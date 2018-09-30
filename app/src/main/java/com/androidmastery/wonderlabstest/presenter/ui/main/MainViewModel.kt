@@ -30,7 +30,11 @@ class MainViewModel(private val service: Services) : BaseViewModel(), MainContra
 
                 override fun onSuccess(success: List<DateResponse>) {
                     state.value = MainState.DismissLoading
-                    state.value = MainState.GetDateSuccess(success)
+                    if(success.isEmpty()){
+                        state.value = MainState.EmptyList
+                    }else {
+                        state.value = MainState.GetDateSuccess(success)
+                    }
                 }
 
                 override fun onError(error: String) {
@@ -47,6 +51,7 @@ sealed class MainState {
     object ShowLoading : MainState()
     object EmptyState : MainState()
     object DismissLoading : MainState()
+    object EmptyList : MainState()
     data class GetDateSuccess(val response: List<DateResponse>) : MainState()
     data class DateFailed(val error: String) : MainState()
 }

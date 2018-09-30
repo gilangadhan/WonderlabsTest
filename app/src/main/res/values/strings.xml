@@ -4,4 +4,5 @@
     <string name="search">Cari</string>
     <string name="empty_input">Masih kosong</string>
     <string name="datepickerdialog">Masukan Tanggal</string>
+    <string name="empty_list">Tidak ada data</string>
 </resources>

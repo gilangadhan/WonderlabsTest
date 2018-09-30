@@ -9,6 +9,7 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.widget.Toast
 import com.androidmastery.wonderlabstest.R
 import com.androidmastery.wonderlabstest.base.BaseApp
 import com.androidmastery.wonderlabstest.helper.convertCalendarToString
@@ -37,12 +38,18 @@ class MainActivity : BaseApp() {
             when (state) {
                 is MainState.EmptyState -> edtInput.error = getString(R.string.empty_input)
                 is MainState.GetDateSuccess -> {
+                    emptyLayout.show(false)
+                    recyclerView.show(true)
                     adapter = MainAdapter(state.response)
                     recyclerView.adapter = adapter
                     adapter.notifyDataSetChanged()
                 }
                 is MainState.ShowLoading -> progressBar.show(true)
                 is MainState.DismissLoading -> progressBar.show(false)
+                is MainState.EmptyList -> {
+                    emptyLayout.show(true)
+                    recyclerView.show(false)
+                }
             }
         })
         if (savedInstanceState == null) {
