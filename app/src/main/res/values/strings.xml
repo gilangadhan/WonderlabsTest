@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WonderlabsTest</string>
+    <string name="input_date">Masukkan Tanggal</string>
+    <string name="search">Cari</string>
+    <string name="empty_input">Masih kosong</string>
+    <string name="datepickerdialog">Masukan Tanggal</string>
+</resources>
