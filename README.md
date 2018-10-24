@@ -1,4 +1,4 @@
-# WonderlabsTest Oktober 2018
+# WonderlabsTest Oktober
 
 1. Buatlah list tanggal dari API https://5b9228e84c818e001456e8c1.mockapi.io/bcg-dates/dates 
 2. dari list tersebut, urutkan sehingga tanggal terbaru akan tampil paling atas 
